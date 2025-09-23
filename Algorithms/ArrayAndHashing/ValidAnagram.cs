@@ -1,4 +1,4 @@
-namespace Algorithms.ArrayAndHasing;
+namespace Algorithms.ArrayAndHashing;
 
 public class ValidAnagram
 {

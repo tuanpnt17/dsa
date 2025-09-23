@@ -1,7 +1,7 @@
 
-using Algorithms.ArrayAndHasing;
+using Algorithms.ArrayAndHashing;
 
-namespace Algorithms.Tests.ArrayAndHasing;
+namespace Algorithms.Tests.ArrayAndHashing;
 
 public class ContainsDuplicateTest
 {
