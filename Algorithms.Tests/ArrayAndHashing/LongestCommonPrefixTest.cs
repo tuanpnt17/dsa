@@ -12,7 +12,7 @@ public class LongestCommonPrefixTest
     [InlineData(new string[] { "longestcommonprefix", "longestcommon", "longest" }, "longest")]
     public void TestFindLongestCommonPrefix(string[] str, string expected)
     {
-        var actual = LongestCommonPrefix.FindLongestCommonPrefix(str);
+        var actual = LongestCommonPrefix.ApproachOne(str);
         Assert.Equal(expected, actual);
     }
 }

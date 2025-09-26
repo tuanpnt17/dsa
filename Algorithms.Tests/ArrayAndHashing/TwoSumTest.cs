@@ -9,7 +9,7 @@ public class TwoSumTest
     [InlineData(new int[] { 3, 4, 5, 6 }, 7, new int[] { 0, 1 })]
     public void TestFindTwoSum(int[] nums, int target, int[] expected)
     {
-        var actual = TwoSum.FindTwoSum(nums, target);
+        var actual = TwoSum.ApproachOne(nums, target);
         Assert.Equal(expected, actual);
     }
 }

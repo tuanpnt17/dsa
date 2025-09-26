@@ -1,13 +1,22 @@
 namespace Algorithms.ArrayAndHashing;
 
+/// <summary>
+/// Provides methods to determine if two strings are anagrams.
+/// </summary>
 public class ValidAnagram
 {
 
     /// <summary>
-    ///Given two strings s and t, return true if the two strings are anagrams of each other, otherwise return false.
-    ///An anagram is a string that contains the exact same characters as another string, but the order of the characters can be different.
+    /// Determines whether two strings are anagrams of each other.
+    /// An anagram is a string that contains the exact same characters as another string, but the order of the characters can be different.
+    /// This approach uses a dictionary to count character occurrences in both strings simultaneously.
     /// </summary>
-    public static bool IsAnagram(string s, string t)
+    /// <param name="s">The first input string.</param>
+    /// <param name="t">The second input string.</param>
+    /// <returns>
+    /// True if <paramref name="s"/> and <paramref name="t"/> are anagrams; otherwise, false.
+    /// </returns>
+    public static bool ApproachOne(string s, string t)
     {
         if (s.Length != t.Length) return false;
 
@@ -30,6 +39,36 @@ public class ValidAnagram
         foreach (var item in dic)
         {
             if (item.Value != 0) return false;
+        }
+
+        return true;
+
+    }
+
+    /// <summary>
+    /// Determines whether two strings are anagrams of each other using a fixed-size array for character counting.
+    /// This approach assumes the strings contain only lowercase English letters.
+    /// </summary>
+    /// <param name="s">The first input string.</param>
+    /// <param name="t">The second input string.</param>
+    /// <returns>
+    /// True if <paramref name="s"/> and <paramref name="t"/> are anagrams; otherwise, false.
+    /// </returns>
+    public static bool ApproachTwo(string s, string t)
+    {
+        if (s.Length != t.Length) return false;
+
+        var count = new int[26];
+
+        for (var i = 0; i < s.Length; i++)
+        {
+            count[s[i] - 'a']++;
+            count[t[i] - 'a']--;
+        }
+
+        foreach (var item in count)
+        {
+            if (item != 0) return false;
         }
 
         return true;
