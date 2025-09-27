@@ -16,5 +16,4 @@ public class MajorityElementTest
         int result = MajorityElement.ApproachTwo(nums);
         Assert.Equal(expected, result);
     }
-
 }

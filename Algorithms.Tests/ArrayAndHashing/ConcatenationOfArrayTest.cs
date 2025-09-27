@@ -13,4 +13,3 @@ public class ConcatenationOfArrayTest
         Assert.Equal(expected, result);
     }
 }
-

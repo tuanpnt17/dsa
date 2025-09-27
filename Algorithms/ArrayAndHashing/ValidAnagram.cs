@@ -5,7 +5,6 @@ namespace Algorithms.ArrayAndHashing;
 /// </summary>
 public class ValidAnagram
 {
-
     /// <summary>
     /// Determines whether two strings are anagrams of each other.
     /// An anagram is a string that contains the exact same characters as another string, but the order of the characters can be different.
@@ -18,7 +17,8 @@ public class ValidAnagram
     /// </returns>
     public static bool ApproachOne(string s, string t)
     {
-        if (s.Length != t.Length) return false;
+        if (s.Length != t.Length)
+            return false;
 
         var dic = new Dictionary<char, int>();
 
@@ -27,22 +27,24 @@ public class ValidAnagram
             var sChar = s[i];
             var tChar = t[i];
 
-            if (!dic.TryGetValue(sChar, out int svalue)) dic.Add(sChar, 1);
+            if (!dic.TryGetValue(sChar, out int svalue))
+                dic.Add(sChar, 1);
             else
                 dic[sChar] = ++svalue;
 
-            if (!dic.TryGetValue(tChar, out int tvalue)) dic.Add(tChar, -1);
-            else dic[tChar] = --tvalue;
-
+            if (!dic.TryGetValue(tChar, out int tvalue))
+                dic.Add(tChar, -1);
+            else
+                dic[tChar] = --tvalue;
         }
 
         foreach (var item in dic)
         {
-            if (item.Value != 0) return false;
+            if (item.Value != 0)
+                return false;
         }
 
         return true;
-
     }
 
     /// <summary>
@@ -56,7 +58,8 @@ public class ValidAnagram
     /// </returns>
     public static bool ApproachTwo(string s, string t)
     {
-        if (s.Length != t.Length) return false;
+        if (s.Length != t.Length)
+            return false;
 
         var count = new int[26];
 
@@ -68,10 +71,10 @@ public class ValidAnagram
 
         foreach (var item in count)
         {
-            if (item != 0) return false;
+            if (item != 0)
+                return false;
         }
 
         return true;
-
     }
 }

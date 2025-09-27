@@ -10,7 +10,7 @@ public class LongestCommonPrefix
     /// </summary>
     /// <param name="strs">An array of strings to evaluate.</param>
     /// <returns>
-    /// The longest common prefix shared by all strings in <paramref name="strs"/>. 
+    /// The longest common prefix shared by all strings in <paramref name="strs"/>.
     /// Returns an empty string if there is no common prefix.
     /// </returns>
     public static string ApproachOne(string[] strs)
@@ -24,7 +24,8 @@ public class LongestCommonPrefix
 
             while (j < Math.Min(prefix.Length, current.Length))
             {
-                if (current[j] != prefix[j]) break;
+                if (current[j] != prefix[j])
+                    break;
                 j++;
             }
 
