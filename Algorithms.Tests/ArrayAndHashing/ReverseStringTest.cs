@@ -16,6 +16,5 @@ public class ReverseStringTest
 
         // Assert
         Assert.Equal(expected, s);
-
     }
 }
